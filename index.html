@@ -1,13 +1,21 @@
+
 <!DOCTYPE html>
 <html ng-app="app">
  <head>
    <meta charset="utf-8">
    <title></title>
    <link rel="stylesheet" href="/style.css">
-	</head>
+ </head>
  	<body ng-controller="ctrl">
-
+    <input type="text" name="" placeholder="User Name" value=""ng-model="userName">
+		<ul id="messages">
+			<li ng-repeat="message in messages">  {{message.user}}: {{message.msg}} </li>
+		</ul>
+		<form ng-submit="submit(inputMessage, userName)">
+			<input type="text" ng-model="inputMessage"><button type="button" name="button">Submit</button>
+		</form>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
 		<script src="app.js"></script>
 		<script src="ctrl.js"></script>
 	</body>
